@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo
+    container_name: "mongo"
+    ports:
+      - '27017:27017'
+  frontend:
+    container_name: "frontend"
+    build: ../immutable-redux
+    environment:
+      env_file: .env
+      NODE_ENV: development
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../immutable-redux:/usr/src/app
+  backend:
+    depends_on:
+      - mongo
+    container_name: "backend"
+    build: ../immutable-redux-server
+    links:
+      - mongo
+    environment:
+      env_file: .env
+      NODE_ENV: development
+    ports:
+      - '8081:8081'
+    volumes:
+      - ../immutable-redux-server:/usr/src/app
+    environment:
+      DOCKER_DB: 27107
+
+#
+# networks:
+#   default:
+#     external:
+#       name: boilerplate
