@@ -6,6 +6,11 @@ services:
     container_name: "mongo"
     ports:
       - '27017:27017'
+  redis:
+    image: redis
+    container_name: "redis"
+    ports:
+      - '6379:6379'
   frontend:
     container_name: "frontend"
     build: ../immutable-redux
@@ -19,6 +24,7 @@ services:
   backend:
     depends_on:
       - mongo
+      - redis
     container_name: "backend"
     build: ../immutable-redux-server
     links:
