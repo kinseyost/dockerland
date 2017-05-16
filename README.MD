@@ -2,3 +2,14 @@
 This is just a docker-compose.yml for running [immutable-redux](https://github.com/kinseyost/immutable-redux)
 [immutable-redux-server](https://github.com/kinseyost/immutable-redux-server)
 and mongodb in docker.
+
+## Setup
+clone the appropriate repos
+```
+cd ~/<Whereever you want>
+git clone https://github.com/kinseyost/dockerland.git # this repo
+git clone https://github.com/kinseyost/immutable-redux.git
+git clone https://github.com/kinseyost/immutable-redux-server.git
+cd ~/<wherever you want>/dockerland
+docker-compose up
+```
