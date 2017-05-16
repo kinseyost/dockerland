@@ -14,5 +14,5 @@ cd dockerland
 docker-compose up
 ```
 # Use
-* navigate to [localhost:3000](localhost:3000) in a couple of browsers
+* navigate to [localhost:3000](http://localhost:3000) in a couple of browsers
 * Any users added to the list will be updated in all instances in Users tab.
