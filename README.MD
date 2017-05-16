@@ -10,6 +10,6 @@ cd ~/<Whereever you want>
 git clone https://github.com/kinseyost/dockerland.git # this repo
 git clone https://github.com/kinseyost/immutable-redux.git
 git clone https://github.com/kinseyost/immutable-redux-server.git
-cd ~/<wherever you want>/dockerland
+cd dockerland
 docker-compose up
 ```
